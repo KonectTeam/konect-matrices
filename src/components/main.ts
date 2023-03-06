@@ -1,17 +1,25 @@
-import { KonectPlugin } from "konect-api-types-ts";
+import { GenericSketchComponentClass, KonectPlugin } from "konect-api-types-ts";
+import { Component } from "vue";
 
-import { KonectMatriceLoader } from "./component/KonectMatriceLoader";
+import KonectMatrixLoader from "./component/KonectMatrixLoader";
+import KonectMatrixLoaderFactory from "./factory/KonectMatrixLoaderFactory";
+
+import KonectMatrixLoaderPopup from './ui/KonectMatrixLoaderPopup.vue';
+
+const popups: Map<GenericSketchComponentClass, Component> = new Map();
+
+popups.set(KonectMatrixLoader, KonectMatrixLoaderPopup);
 
 const plugin: KonectPlugin = {
     components: [
-        KonectMatriceLoader
+        KonectMatrixLoader
     ],
 
     factories: [
-
+        KonectMatrixLoaderFactory
     ],
 
-    popup: new Map(),
+    popup: popups,
 
     pluginInformation: {
         description: 'Components that interfact with matrices an apply calculations',
