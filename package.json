@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "env TS_NODE_PROJECT=\"tsconfig.testing.json\" ts-mocha --require ts-node/register src/tests/**/*.spec.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
-    "konect-api-types-ts": "^1.0.1",
+    "konect-api-types-ts": "file://../konect-api-types/konect-api-types-ts-1.0.1.tgz",
     "konect-api-vue": "^0.0.1",
     "ml-matrix": "^6.10.4",
     "vue": "^3.2.45"

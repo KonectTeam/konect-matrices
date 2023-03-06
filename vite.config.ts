@@ -26,6 +26,7 @@ export default defineConfig({
   ],
   build: {
     cssCodeSplit: true,
+    minify: false,
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: "src/components/main.ts",
