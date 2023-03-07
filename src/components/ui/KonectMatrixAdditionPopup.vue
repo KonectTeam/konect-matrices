@@ -3,13 +3,21 @@
         title="Matrix addition"
     >
         <template v-slot:modal-body>
-            <div class="d-flex">
-                <div class="w-50" v-if="component.aWrapper.isDataAvailable()">
+            <div class="d-flex" v-if="component.aWrapper.isDataAvailable() && component.bWrapper.isDataAvailable()">
+                <div class="w-50">
                     <KonectMatrix :matrix="aMatrix" />
                 </div>
                 <div class="w-50">
                     <KonectMatrix :matrix="bMatrix" />
                 </div>
+            </div>
+            <div v-else>
+                <v-alert
+                    type="error"
+                    title="No data available"
+                    text="None matrix available to computed addition"
+                >
+                </v-alert>  
             </div>
         </template>
     </SketchComponentModal>
