@@ -1,13 +1,12 @@
 <template>
-    <v-table>
+    <v-table class="border">
         <tbody>
             <tr
-                v-for="row in matrix.rows"
-                :key="row"
+                v-for="(row, index) in matrix2D"
+                    :key="index"
                 >
-            >
-                <td v-for="col in matrix.columns" :key="col">
-                    {{  matrix.get(row, col) }}
+                <td v-for="(col, colIndex) in row" :key="colIndex">
+                    {{ col }}
                 </td>
             </tr>
         </tbody>
@@ -26,6 +25,11 @@ export default defineComponent({
             type: Matrix
         }
     },
+    computed: {
+        matrix2D(): Array<Array<number>> {
+            return this.matrix.to2DArray();
+        }
+    }
 })
 
 </script>

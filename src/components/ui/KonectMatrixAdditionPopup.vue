@@ -1,13 +1,16 @@
 <template>
     <SketchComponentModal
         title="Matrix addition"
+        :max-width="1200"
     >
         <template v-slot:modal-body>
-            <div class="d-flex" v-if="component.aWrapper.isDataAvailable() && component.bWrapper.isDataAvailable()">
-                <div class="w-50">
+            <div class="d-flex justify-content-around" v-if="component.aWrapper.isDataAvailable() && component.bWrapper.isDataAvailable()">
+                <div class="w-45">
+                    <h6 class="text-center">Matrix #1</h6>
                     <KonectMatrix :matrix="aMatrix" />
                 </div>
-                <div class="w-50">
+                <div class="w-45">
+                    <h6 class="text-center">Matrix #2</h6>
                     <KonectMatrix :matrix="bMatrix" />
                 </div>
             </div>
@@ -58,3 +61,11 @@ export default defineComponent({
 });
 
 </script>
+
+<style>
+
+.w-45 {
+    width: 45%;
+}
+
+</style>
