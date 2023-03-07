@@ -12,7 +12,7 @@ export default class KonectMatrixLoaderFactory implements SketchComponentFactory
     fromJSON(rawJson: object) : KonectMatrixLoader {
         const component = new KonectMatrixLoader();
         const json: KonectMatrixLoaderJSON = rawJson as KonectMatrixLoaderJSON;
-        component.setRawMatrix(json.data);
+        component.setRawMatrix(json.data ?? '');
         return component;
 
     }

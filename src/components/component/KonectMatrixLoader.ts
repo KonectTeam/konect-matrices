@@ -1,6 +1,8 @@
 import { Component, SketchComponent } from "konect-api-types-ts";
 import { faTableCells } from "@fortawesome/free-solid-svg-icons";
 
+import { isNumeric } from "../utils/utils";
+
 import {Matrix} from "ml-matrix";
 
 @Component({
@@ -34,8 +36,15 @@ export default class KonectMatrixLoader extends SketchComponent<Matrix> {
             this.rawMatrix.split(/\n/).forEach(line => {
                 line = line.trim();
                 const currentLine = new Array<number>();
-                line.split(" ").forEach(value => currentLine.push(parseFloat(value.trim())));
-                data.push(currentLine);
+                line.split(" ").forEach(value => {
+                    if (isNumeric(value)) {
+                        currentLine.push(parseFloat(value.trim()))
+                    }
+                });
+                
+                if (currentLine.length > 0) {
+                    data.push(currentLine);
+                }
             });
         }
         
