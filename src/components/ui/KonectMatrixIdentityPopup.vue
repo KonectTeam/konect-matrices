@@ -29,7 +29,7 @@ export default defineComponent({
     },
     data() {
         return {
-            dimensions: this.component.dimensions
+            dimensions: this.component.dimensions.toString()
         }
     },
     components: {
@@ -38,7 +38,7 @@ export default defineComponent({
 
     methods: {
         beforeClose() {
-            this.component.setDimensions(this.dimensions);
+            this.component.setDimensions(parseFloat(this.dimensions));
         }
     }
 });

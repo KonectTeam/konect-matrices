@@ -26,6 +26,7 @@ export default class KonectMatrixIdentity extends SketchComponent<Matrix> {
     
     setDimensions(dimensions: number) {
         this._dimensions = dimensions;
+        console.log(this.dimensions);
     }
 
     execute(): Matrix {
