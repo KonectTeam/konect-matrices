@@ -24,8 +24,6 @@ describe('Test the factory of the component KonectMatrixLoader', () => {
 
         const matrix = component.execute();
 
-        console.log(matrix.toString());
-
         expect(matrix.rows).to.equal(0);
         expect(matrix.columns).to.equal(0);
     })
