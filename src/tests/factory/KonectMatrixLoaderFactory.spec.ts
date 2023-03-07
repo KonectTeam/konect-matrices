@@ -8,7 +8,7 @@ const factory = new KonectMatrixLoaderFactory();
 let component: KonectMatrixLoader;
 
 describe('Test the factory for the KonectmatrixLoader', () => {
-    it('Parse a KonectMatirxLoader from a valid json', () => {
+    it('Parse a KonectMatrixLoader from a valid json', () => {
         component = factory.fromJSON({
             data: '10 20'
         });

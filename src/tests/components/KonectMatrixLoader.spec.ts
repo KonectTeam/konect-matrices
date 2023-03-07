@@ -72,4 +72,4 @@ describe('Test the execution of the component KonectMatrixLoader', () => {
         expect(matrix.get(0, 1)).to.equal(10.2);
         expect(matrix.get(0, 2)).to.equal(-0.2);
     })
-})
+});
