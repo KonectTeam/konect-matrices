@@ -50,6 +50,10 @@ export default class KonectMatrixAddition extends SketchComponent<Matrix> {
         const aMatrix = this.aWrapper.getData() as Matrix;
         const bMatrix = this.bWrapper.getData() as Matrix;
 
+        if (bMatrix.size !== aMatrix.size) {
+            throw 'The two matrices must have the same dimensions';
+        }
+
         return aMatrix.add(bMatrix);
     }
 
