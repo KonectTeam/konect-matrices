@@ -6,7 +6,7 @@ import KonectMatrixAddition from "./component/KonectMatrixAddition";
 import KonectMatrixIdentity from "./component/KonectMatrixIdentity";
 import KonectMatrixSub from "./component/KonectMatrixSub";
 import KonectMatrixMinMax from "./component/KonectMatrixMinMax";
-import KonectMatrixViewer from "@/tests/components/KonectMatrixViewer";
+import KonectMatrixViewer from "@/components/component/KonectMatrixViewer";
 
 import KonectMatrixLoaderFactory from "./factory/KonectMatrixLoaderFactory";
 import KonectMatrixIdentityFactory from "./factory/KonectMatrixIdentityFactory";

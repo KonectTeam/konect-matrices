@@ -3,28 +3,29 @@ import { expect } from "chai";
 import KonectMatrixSub from "../../components/component/KonectMatrixSub";
 import { Matrix } from "ml-matrix";
 
-describe('Test the execution of the component KonectMatrixSub', () => {
-    it('Check the execution of the component without any matrices', () => {
-        const component = new KonectMatrixSub();
+let component: KonectMatrixSub;
 
+describe('Test the execution of the component KonectMatrixSub', () => {
+    beforeEach(() => {
+        component = new KonectMatrixSub();
+    });
+
+    it('Check the execution of the component without any matrices', () => {
         expect(() => component.execute()).to.throw("Both a and b matrices must be set");
     });
 
     it('Check the execution of the component with only the A matrix', () => {
-        const component = new KonectMatrixSub();
         component.setMatrixA(new Matrix(10, 10));
         expect(() => component.execute()).to.throw("Both a and b matrices must be set");
     });
 
     it('Check the execution of the component with only the B matrix', () => {
-        const component = new KonectMatrixSub();
         component.setMatrixB(new Matrix(10, 10));
         expect(() => component.execute()).to.throw("Both a and b matrices must be set");
     });
 
 
     it('Check the execution of the component with two matrices', () => {
-        const component = new KonectMatrixSub();
         const matrix = new Matrix([
             [ 10, 10 ]
         ]);
@@ -45,8 +46,6 @@ describe('Test the execution of the component KonectMatrixSub', () => {
     });
 
     it('Check the execution of the component with two matrices with different size', () => {
-        const component = new KonectMatrixSub();
-
         component.setMatrixA(new Matrix([
             [ 10 ]
         ]));
@@ -59,7 +58,6 @@ describe('Test the execution of the component KonectMatrixSub', () => {
     });
 
     it('Check the execution of the component with two empty matrices', () => {
-        const component = new KonectMatrixSub();
         component.setMatrixA(new Matrix(0, 0));
         component.setMatrixB(new Matrix(0, 0));
 

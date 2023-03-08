@@ -29,7 +29,7 @@ import KonectMatrix from './util/KonectMatrix.vue';
 
 import { Matrix } from 'ml-matrix';
 
-import KonectMatrixViewer from '@/tests/components/KonectMatrixViewer';
+import KonectMatrixViewer from '@/components/component/KonectMatrixViewer';
 
 export default defineComponent({
     props: {

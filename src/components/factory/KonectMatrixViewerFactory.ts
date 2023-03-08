@@ -1,6 +1,6 @@
 import { Factory, SketchComponentFactory } from "konect-api-types-ts";
 
-import KonectMatrixViewer from "@/tests/components/KonectMatrixViewer";
+import KonectMatrixViewer from "@/components/component/KonectMatrixViewer";
 
 
 @Factory(KonectMatrixViewer)
