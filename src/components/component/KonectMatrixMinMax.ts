@@ -1,22 +1,25 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Matrix } from "ml-matrix";
 import { Component, Entry, SketchComponent, SketchWrapper } from "konect-api-types-ts";
+import { faPlusMinus } from "@fortawesome/free-solid-svg-icons";
 
-import { Matrix } from 'ml-matrix';
+import { MinMaxFunc } from "../utils/utils";
 
 @Component({
     namespace: 'Matrix',
-    name: 'Matrix addition',
+    name: 'Min/Max matrix',
+    returnType: Matrix,
     icon: {
-        fa: faPlus,
-        name: 'fa-plus'
-    },
-    returnType: Matrix
+        fa: faPlusMinus,
+        name: 'fa-plus-minus'
+    }
 })
-export default class KonectMatrixAddition extends SketchComponent<Matrix> {
-    
+export default class KonectMatrixMinMax extends SketchComponent<Matrix> {
+
     private _aWrapper: SketchWrapper<Matrix>;
 
     private _bWrapper: SketchWrapper<Matrix>;
+
+    private _functionName: MinMaxFunc = 'max';
 
     constructor() {
         super();
@@ -24,21 +27,17 @@ export default class KonectMatrixAddition extends SketchComponent<Matrix> {
         this._bWrapper = new SketchWrapper<Matrix>();
     }
 
-    get aWrapper() {
-        return this._aWrapper;
-    }
-
-    get bWrapper() {
-        return this._bWrapper;
-    }
+    get aWrapper(): SketchWrapper<Matrix> { return this._aWrapper }
+    get bWrapper(): SketchWrapper<Matrix> { return this._bWrapper }
+    get functionName() { return this._functionName; }
 
     @Entry("A", Matrix)
-    setMatrixA(matrix: Matrix) {
+    setAMatrix(matrix: Matrix) {
         this.aWrapper.setData(matrix);
     }
 
     @Entry("B", Matrix)
-    setMatrixB(matrix: Matrix) {
+    setBMatrix(matrix: Matrix) {
         this.bWrapper.setData(matrix);
     }
 
@@ -50,25 +49,29 @@ export default class KonectMatrixAddition extends SketchComponent<Matrix> {
         const aMatrix = this.aWrapper.getData() as Matrix;
         const bMatrix = this.bWrapper.getData() as Matrix;
 
-        if (bMatrix.size !== aMatrix.size) {
+        if (aMatrix.size !== bMatrix.size) {
             throw 'The two matrices must have the same dimensions';
         }
 
-        return aMatrix.add(bMatrix);
+        return this._functionName === 'max' ? Matrix.max(aMatrix, bMatrix) : Matrix.min(aMatrix, bMatrix);;
+    }
+
+    setFunctionName(funcName: MinMaxFunc) {
+        this._functionName = funcName;
     }
 
     copy(): SketchComponent<Matrix> {
-        const component = new KonectMatrixAddition();
+        const component = new KonectMatrixMinMax();
+
         if (this.aWrapper.isDataAvailable()) {
-            const matrix = this.aWrapper.getData() as Matrix;
-            component.aWrapper.setData(new Matrix(matrix));
+            component.aWrapper.setData(this.aWrapper.getData());
         }
 
         if (this.bWrapper.isDataAvailable()) {
-            const matrix = this.bWrapper.getData() as Matrix;
-            component.bWrapper.setData(new Matrix(matrix));
+            component.bWrapper.setData(this.bWrapper.getData());
         }
 
         return component;
     }
+    
 }
