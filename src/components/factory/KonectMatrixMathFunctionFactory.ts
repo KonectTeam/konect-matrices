@@ -13,7 +13,8 @@ export default class KonectMatrixMathFunctionFactory implements SketchComponentF
     fromJSON(rawJSON: object): KonectMatrixMathFunction {
         const component = new KonectMatrixMathFunction();
         const json: KonectMatrixMathFunctionJSON = rawJSON as KonectMatrixMathFunctionJSON;
-        component.setFunctionName(json.functionName ?? availableMathFunction[0]);
+        const functionName = availableMathFunction.includes(json.functionName) ? json.functionName : availableMathFunction[0];
+        component.setFunctionName(functionName);
         return component;
     }
 

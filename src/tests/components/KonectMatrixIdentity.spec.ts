@@ -14,13 +14,13 @@ describe('Test the execution of the component KonectMatrixIdentity', () => {
 
         const matrix = component.execute();
 
-        expect(matrix.rows).to.equal(2);
-        expect(matrix.columns).to.equal(2);
+        expect(matrix.rows).to.be.equal(2);
+        expect(matrix.columns).to.be.equal(2);
 
         for (let row = 0; row < matrix.rows; row++) {
             for (let column = 0; column < matrix.columns; column++) {
                 if (row === column) {
-                    expect(matrix.get(row, column)).to.equal(1);
+                    expect(matrix.get(row, column)).to.be.equal(1);
                 }
             }
         }
@@ -28,8 +28,8 @@ describe('Test the execution of the component KonectMatrixIdentity', () => {
 
     it('Check the execution of the component with a dimension equal to 0', () => {
         const matrix = component.execute();
-        expect(matrix.rows).to.equal(0);
-        expect(matrix.columns).to.equal(0);
+        expect(matrix.rows).to.be.equal(0);
+        expect(matrix.columns).to.be.equal(0);
     });
 
     it('Check the execution of the component with a negative dimension', () => {

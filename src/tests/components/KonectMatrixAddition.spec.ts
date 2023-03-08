@@ -36,12 +36,12 @@ describe('Test the execution of the component KonectMatrixAddition', () => {
 
         const result = component.execute();
 
-        expect(result.columns).to.equal(2);
-        expect(result.rows).to.equal(1);
+        expect(result.columns).to.be.equal(2);
+        expect(result.rows).to.be.equal(1);
 
         for (let row = 0; row < result.rows; ++row) {
             for (let col = 0; col < result.columns; ++col) {
-                expect(result.get(row, col)).to.equal(20);
+                expect(result.get(row, col)).to.be.equal(20);
             }
         }
     });
@@ -63,7 +63,7 @@ describe('Test the execution of the component KonectMatrixAddition', () => {
         component.setMatrixB(new Matrix(0, 0));
 
         const result = component.execute();
-        expect(result.columns).to.equal(0);
-        expect(result.rows).to.equal(0);
+        expect(result.columns).to.be.equal(0);
+        expect(result.rows).to.be.equal(0);
     });
 });

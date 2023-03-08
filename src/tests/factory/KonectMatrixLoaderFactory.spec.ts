@@ -13,19 +13,19 @@ describe('Test the factory for the KonectmatrixLoader', () => {
             data: '10 20'
         });
 
-        expect(component.rawMatrix).to.equal('10 20');
+        expect(component.rawMatrix).to.be.equal('10 20');
     });
 
     it('Parse a KonectMatrixLoader from an empty data', () => {
         component = factory.fromJSON({data: ''});
 
-        expect(component.rawMatrix).to.equal('');
+        expect(component.rawMatrix).to.be.equal('');
     });
 
     it('Parse a KonectMatrixLoader from an empty json Object', () => {
         component = factory.fromJSON({});
 
-        expect(component.rawMatrix).to.equal('');
+        expect(component.rawMatrix).to.be.equal('');
     });
 
 

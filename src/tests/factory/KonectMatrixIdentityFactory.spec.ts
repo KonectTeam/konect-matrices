@@ -13,7 +13,7 @@ describe('Test the factory for the KonectMatrixIdentity component', () => {
             dimensions: 100
         });
 
-        expect(component.dimensions).to.equal(100);
+        expect(component.dimensions).to.be.equal(100);
     });
 
     it('Parse a KonectMatrixIdentity from a valid JSON with negative value', () => {
@@ -21,7 +21,7 @@ describe('Test the factory for the KonectMatrixIdentity component', () => {
             dimensions: -100
         });
 
-        expect(component.dimensions).to.equal(-100);
+        expect(component.dimensions).to.be.equal(-100);
     });
 
     it('Parse a KonectMatrixIdentity from a valid JSON with a 0 value', () => {
@@ -29,13 +29,13 @@ describe('Test the factory for the KonectMatrixIdentity component', () => {
             dimensions: 0
         });
 
-        expect(component.dimensions).to.equal(0);
+        expect(component.dimensions).to.be.equal(0);
     });
 
     it('Parse a KonectMatrixIdentity with an empty JSON', () => {
         component = factory.fromJSON({ });
 
-        expect(component.dimensions).to.equal(0);
+        expect(component.dimensions).to.be.equal(0);
     });
 
 

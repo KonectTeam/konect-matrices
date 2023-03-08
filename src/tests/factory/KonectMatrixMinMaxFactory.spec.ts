@@ -13,7 +13,7 @@ describe('Test the factory for the KonectMatrixMinMaxFactory', () => {
             functionName: 'min'
         });
 
-        expect(component.functionName).to.equal('min');
+        expect(component.functionName).to.be.equal('min');
     });
 
     it('Parse a KonectMatrixMinMax from a valid json with max value', () => {
@@ -21,13 +21,13 @@ describe('Test the factory for the KonectMatrixMinMaxFactory', () => {
             functionName: 'max'
         }); 
 
-        expect(component.functionName).to.equal('max');
+        expect(component.functionName).to.be.equal('max');
     });
 
     it('Parse a KonectMatrixMinMax from an empty json', () => {
         component = factory.fromJSON({ });
 
-        expect(component.functionName).to.equal('max');
+        expect(component.functionName).to.be.equal('max');
     });
 
 
