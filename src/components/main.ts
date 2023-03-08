@@ -9,6 +9,8 @@ import KonectMatrixMinMax from "./component/KonectMatrixMinMax";
 import KonectMatrixViewer from "@/components/component/KonectMatrixViewer";
 import KonectMatrixMathFunction from "./component/KonectMatrixMathFunction";
 import KonectMatrixTranspose from "./component/KonectMatrixTranspose";
+import KonectMatrixCenter from "./component/KonectMatrixCenter";
+import KonectMatrixEquationSolver from "./component/KonectMatrixEquationSolver";
 
 import KonectMatrixLoaderFactory from "./factory/KonectMatrixLoaderFactory";
 import KonectMatrixIdentityFactory from "./factory/KonectMatrixIdentityFactory";
@@ -18,6 +20,8 @@ import KonectMatrixMinMaxFactory from "./factory/KonectMatrixMinMaxFactory";
 import KonectMatrixViewerFactory from "./factory/KonectMatrixViewerFactory";
 import KonectMatrixMathFunctionFactory from "./factory/KonectMatrixMathFunctionFactory";
 import KonectMatrixTransposeFactory from "./factory/KonectMatrixTransposeFactory";
+import KonectMatrixCenterFactory from "./factory/KonectMatrixCenterFactory";
+import KonectMatrixEquationSolverFactory from "./factory/KonectMatrixEquationSolverFactory";
 
 import KonectMatrixLoaderPopup from './ui/KonectMatrixLoaderPopup.vue';
 import KonectMatrixIdentityPopup from "./ui/KonectMatrixIdentityPopup.vue";
@@ -27,7 +31,8 @@ import KonectMatrixMinMaxPopup from './ui/KonectMatrixMinMaxPopup.vue';
 import KonectMatrixViewerPopup from './ui/KonectMatrixViewerPopup.vue';
 import KonectMatrixMathFunctionPopup from './ui/KonectMatrixMathFunctionPopup.vue';
 import KonectMatrixTransposePopup from './ui/KonectMatrixTransposePopup.vue';
-
+import KonectMatrixCenterPopup from './ui/KonectMatrixCenterPopup.vue';
+import KonectMatrixEquationSolverPopup from './ui/KonectMatrixEquationSolverPopup.vue';
 
 const popups: Map<GenericSketchComponentClass, Component> = new Map();
 
@@ -39,6 +44,8 @@ popups.set(KonectMatrixMinMax, KonectMatrixMinMaxPopup);
 popups.set(KonectMatrixViewer, KonectMatrixViewerPopup);
 popups.set(KonectMatrixMathFunction, KonectMatrixMathFunctionPopup);
 popups.set(KonectMatrixTranspose, KonectMatrixTransposePopup);
+popups.set(KonectMatrixCenter, KonectMatrixCenterPopup);
+popups.set(KonectMatrixEquationSolver, KonectMatrixEquationSolverPopup);
 
 const plugin: KonectPlugin = {
     components: [
@@ -49,7 +56,9 @@ const plugin: KonectPlugin = {
         KonectMatrixMinMax,
         KonectMatrixViewer,
         KonectMatrixMathFunction,
-        KonectMatrixTranspose
+        KonectMatrixTranspose,
+        KonectMatrixCenter,
+        KonectMatrixEquationSolver
     ],
 
     factories: [
@@ -60,7 +69,9 @@ const plugin: KonectPlugin = {
         KonectMatrixMinMaxFactory,
         KonectMatrixViewerFactory,
         KonectMatrixMathFunctionFactory,
-        KonectMatrixTransposeFactory
+        KonectMatrixTransposeFactory,
+        KonectMatrixCenterFactory,
+        KonectMatrixEquationSolverFactory
     ],
 
     popup: popups,
