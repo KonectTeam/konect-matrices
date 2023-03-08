@@ -9,7 +9,7 @@ interface KonectMatrixMinMaxJSON {
 }
 
 @Factory(KonectMatrixMinMax)
-export default class KonectMatrixLoaderFactory implements SketchComponentFactory<KonectMatrixMinMax> {
+export default class KonectMatrixMinMaxFactory implements SketchComponentFactory<KonectMatrixMinMax> {
     
     fromJSON(rawJson: object) : KonectMatrixMinMax {
         const component = new KonectMatrixMinMax();
