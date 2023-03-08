@@ -8,6 +8,7 @@ interface KonectMatrixMathFunctionJSON {
     functionName: MatrixMathFunction;
 }
 
+@Factory(KonectMatrixMathFunction)
 export default class KonectMatrixMathFunctionFactory implements SketchComponentFactory<KonectMatrixMathFunction> {
 
     fromJSON(rawJSON: object): KonectMatrixMathFunction {
