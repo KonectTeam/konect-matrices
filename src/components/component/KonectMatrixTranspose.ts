@@ -9,7 +9,7 @@ import { Matrix } from 'ml-matrix';
     returnType: Matrix,
     icon: {
         fa: faSuperscript,
-        name: 'fa-super-script'
+        name: 'fa-superscript'
     }
 })
 export default class KonectMatrixTranspose extends SketchComponent<Matrix> {
