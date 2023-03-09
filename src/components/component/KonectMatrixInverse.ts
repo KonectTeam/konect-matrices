@@ -9,7 +9,7 @@ import { Matrix, inverse } from 'ml-matrix';
     returnType: Matrix,
     icon: {
         fa: faArrowsRotate,
-        name: 'fa-arrow-rotate'
+        name: 'fa-arrows-rotate'
     }
 })
 export default class KonectMatrixInverse extends SketchComponent<Matrix> {

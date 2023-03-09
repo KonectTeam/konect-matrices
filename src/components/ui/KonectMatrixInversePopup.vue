@@ -1,6 +1,6 @@
 <template>
     <SketchComponentModal
-        title="Center matrix"
+        title="Inverse matrix"
     >
         <template v-slot:modal-body>
             <div class="d-flex justify-content-center" v-if="component.matrixWrapper.isDataAvailable()">
