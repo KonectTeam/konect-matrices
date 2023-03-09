@@ -12,6 +12,7 @@ import KonectMatrixTranspose from "./component/KonectMatrixTranspose";
 import KonectMatrixCenter from "./component/KonectMatrixCenter";
 import KonectMatrixEquationSolver from "./component/KonectMatrixEquationSolver";
 import KonectMatrixInverse from "./component/KonectMatrixInverse";
+import KonectMatrixProduct from "./component/KonectMatrixProduct";
 
 import KonectMatrixLoaderFactory from "./factory/KonectMatrixLoaderFactory";
 import KonectMatrixIdentityFactory from "./factory/KonectMatrixIdentityFactory";
@@ -24,6 +25,7 @@ import KonectMatrixTransposeFactory from "./factory/KonectMatrixTransposeFactory
 import KonectMatrixCenterFactory from "./factory/KonectMatrixCenterFactory";
 import KonectMatrixEquationSolverFactory from "./factory/KonectMatrixEquationSolverFactory";
 import KonectMatrixInverseFactory from "./factory/KonectMatrixInverseFactory";
+import KonectMatrixProductFactory from "./factory/KonectMatrixProductFactory";
 
 import KonectMatrixLoaderPopup from './ui/KonectMatrixLoaderPopup.vue';
 import KonectMatrixIdentityPopup from "./ui/KonectMatrixIdentityPopup.vue";
@@ -36,6 +38,7 @@ import KonectMatrixTransposePopup from './ui/KonectMatrixTransposePopup.vue';
 import KonectMatrixCenterPopup from './ui/KonectMatrixCenterPopup.vue';
 import KonectMatrixEquationSolverPopup from './ui/KonectMatrixEquationSolverPopup.vue';
 import KonectMatrixInversePopup from './ui/KonectMatrixInversePopup.vue';
+import KonectMatrixProductPopup from './ui/KonectMatrixProductPopup.vue';
 
 const popups: Map<GenericSketchComponentClass, Component> = new Map();
 
@@ -50,6 +53,7 @@ popups.set(KonectMatrixTranspose, KonectMatrixTransposePopup);
 popups.set(KonectMatrixCenter, KonectMatrixCenterPopup);
 popups.set(KonectMatrixEquationSolver, KonectMatrixEquationSolverPopup);
 popups.set(KonectMatrixInverse, KonectMatrixInversePopup);
+popups.set(KonectMatrixProduct, KonectMatrixProductPopup);
 
 const plugin: KonectPlugin = {
     components: [
@@ -63,7 +67,8 @@ const plugin: KonectPlugin = {
         KonectMatrixTranspose,
         KonectMatrixCenter,
         KonectMatrixEquationSolver,
-        KonectMatrixInverse
+        KonectMatrixInverse,
+        KonectMatrixProduct
     ],
 
     factories: [
@@ -77,7 +82,8 @@ const plugin: KonectPlugin = {
         KonectMatrixTransposeFactory,
         KonectMatrixCenterFactory,
         KonectMatrixEquationSolverFactory,
-        KonectMatrixInverseFactory
+        KonectMatrixInverseFactory,
+        KonectMatrixProductFactory
     ],
 
     popup: popups,

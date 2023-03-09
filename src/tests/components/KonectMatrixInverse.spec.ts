@@ -30,9 +30,6 @@ describe('Test the execution of the KonectMatrixInverse component', () => {
         const result = component.execute();
         expect(result.columns).to.be.equal(2);
         expect(result.rows).to.be.equal(2);
-
-        console.log(result)
-
         expect(result.get(0, 0)).to.be.equal(3 / 50);
         expect(result.get(0, 1)).to.be.equal(-1 / 25);
         expect(result.get(1, 0)).to.be.equal(1 / 50);
